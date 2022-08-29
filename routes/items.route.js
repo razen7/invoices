@@ -3,7 +3,7 @@ const ItemModel = require('../models/item.model');
 const router = require('express').Router();
 
 // List items
-router.get('/listItems', async (req, res) => {
+router.get('/list', async (req, res) => {
     try {
         await ItemModel
             .find()
@@ -22,7 +22,7 @@ router.get('/listItems', async (req, res) => {
 });
 
 // Add an item
-router.post('/addItem', async (req, res) => {
+router.post('/add', async (req, res) => {
     let { name, unit_price, description } = req.body;
 
     const newItem = new ItemModel({ name, unit_price, description });
